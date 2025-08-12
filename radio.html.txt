@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Synthwave Radio</title>
+    <style>
+        body {
+            background: #121212;
+            color: #00ffcc;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            padding: 50px;
+        }
+        .player {
+            margin-top: 30px;
+        }
+        h1 {
+            color: #ff00ff;
+            text-shadow: 0 0 10px rgba(255,0,255,0.7);
+        }
+        button {
+            background: #4CAF50;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 20px;
+            margin: 10px;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background: #45a049;
+        }
+        #stopBtn {
+            background: #f44336;
+        }
+        #stopBtn:hover {
+            background: #d32f2f;
+        }
+    </style>
+</head>
+<body>
+    <h1>🎧 Synthwave Radio</h1>
+    
+    <div class="player">
+        <audio id="radioPlayer" src="https://stream.synthwaveradio.eu/listen/synthwaveradio.eu/radio.mp3"></audio>
+        <button id="playBtn">▶️ PLAY</button>
+        <button id="stopBtn">⏹ STOP</button>
+    </div>
+
+    <script>
+        const player = document.getElementById('radioPlayer');
+        const playBtn = document.getElementById('playBtn');
+        const stopBtn = document.getElementById('stopBtn');
+
+        playBtn.addEventListener('click', () => {
+            player.play();
+            playBtn.textContent = "▶️ PLAYING";
+        });
+
+        stopBtn.addEventListener('click', () => {
+            player.pause();
+            playBtn.textContent = "▶️ PLAY";
+        });
+    </script>
+</body>
+</html>
